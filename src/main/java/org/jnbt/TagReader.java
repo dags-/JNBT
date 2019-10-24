@@ -64,7 +64,7 @@ interface TagReader {
             }
             map.put(key, child);
         }
-        return new CompoundTag(map).immutable();
+        return new CompoundTag(map);
     };
 
     @SuppressWarnings("unchecked")
@@ -83,7 +83,7 @@ interface TagReader {
             list.add(tag);
         }
 
-        return new ListTag(list, childType).immutable();
+        return new ListTag(list, childType);
     };
 
     static RootTag readRootTag(DataInput in) throws IOException {

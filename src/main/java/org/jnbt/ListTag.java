@@ -69,6 +69,14 @@ public final class ListTag<V> extends Tag<ListTag> implements Iterable<V> {
         return value;
     }
 
+    public Tag<V> get(int index) {
+        return value.get(index);
+    }
+
+    public int size() {
+        return value.size();
+    }
+
     public <T> List<T> getList(NbtDeserializer<T> deserializer) {
         List<T> list = new ArrayList<>(value.size());
         for (Tag tag : value) {
@@ -117,6 +125,11 @@ public final class ListTag<V> extends Tag<ListTag> implements Iterable<V> {
     @Override
     public boolean isPresent() {
         return this != EMPTY;
+    }
+
+    @Override
+    public ListTag<?> asList() {
+        return this;
     }
 
     @Override

@@ -62,6 +62,10 @@ public abstract class Tag<V> {
         return CompoundTag.EMPTY;
     }
 
+    public ListTag<?> asList() {
+        return ListTag.empty();
+    }
+
     public <S, T extends Tag<S>> ListTag<S> asList(TagType<S, T> type) {
         return ListTag.empty();
     }
